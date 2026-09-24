@@ -1,0 +1,27 @@
+{
+  "service": "compass-claim-adjudication",
+  "entities": [
+    "claim",
+    "evidence_item",
+    "review_decision",
+    "exhibit_text"
+  ],
+  "events": [
+    "CLAIM_REGISTERED",
+    "EVIDENCE_LINKED",
+    "REVIEW_RECORDED",
+    "TEXT_RELEASED",
+    "IMPACT_REOPENED"
+  ],
+  "envelope": {
+    "required": [
+      "event_id",
+      "event_type",
+      "occurred_at",
+      "aggregate_id",
+      "version",
+      "payload"
+    ],
+    "version_minimum": 1
+  }
+}
