@@ -6,11 +6,64 @@
     "review_decision",
     "exhibit_text"
   ],
+  "claim_kinds": [
+    "literature_excerpt",
+    "artifact_dating",
+    "reconstruction_plan",
+    "experiment_record",
+    "scholar_opinion",
+    "translation",
+    "exhibit_label",
+    "education_activity"
+  ],
+  "evidence_tiers": [
+    "HISTORICAL_RECORD",
+    "PHYSICAL_EVIDENCE",
+    "EXPERIMENTAL_SUPPORT",
+    "DISPUTED"
+  ],
+  "claim_relations": [
+    "supports",
+    "contradicts",
+    "depends_on",
+    "derived_from",
+    "translates",
+    "dates"
+  ],
+  "disciplines": [
+    "philology",
+    "archaeology",
+    "history_of_technology",
+    "physics",
+    "museology",
+    "education"
+  ],
+  "review_outcomes": [
+    "APPROVED",
+    "CHANGES_REQUESTED",
+    "REJECTED",
+    "REVOKED"
+  ],
+  "label_statuses": [
+    "DRAFT",
+    "IN_REVIEW",
+    "PUBLISHED",
+    "REOPENED",
+    "ARCHIVED"
+  ],
   "events": [
     "CLAIM_REGISTERED",
+    "CLAIM_SUPERSEDED",
+    "CLAIM_RELATION_LINKED",
     "EVIDENCE_LINKED",
     "REVIEW_RECORDED",
+    "REVIEW_REVOKED",
+    "TEXT_DRAFTED",
+    "TEXT_CLAIM_CITED",
+    "TEXT_CITATION_WITHDRAWN",
+    "TEXT_REVISED",
     "TEXT_RELEASED",
+    "TEXT_ARCHIVED",
     "IMPACT_REOPENED"
   ],
   "envelope": {

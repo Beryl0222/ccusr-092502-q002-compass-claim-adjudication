@@ -2,9 +2,13 @@
   "event_id": "compass-clai-sample-001",
   "event_type": "CLAIM_REGISTERED",
   "occurred_at": "2026-09-24T09:00:00+08:00",
-  "aggregate_id": "claim-001",
+  "aggregate_id": "claim-sample-lunheng",
   "version": 1,
   "payload": {
-    "note": "用于校验基础事件信封"
+    "kind": "literature_excerpt",
+    "statement": "《论衡·是应》：“司南之杓，投之于地，其柢指南。”",
+    "tier": "HISTORICAL_RECORD",
+    "source_ref": "《论衡》卷十七·是应",
+    "registered_by": "文献组"
   }
 }
