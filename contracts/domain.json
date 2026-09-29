@@ -1,17 +1,47 @@
 {
   "service": "compass-claim-adjudication",
+  "description": "罗盘展陈主张裁决库：分级登记主张与证据，专业复核门禁，勘误影响面与只增事件史。",
   "entities": [
     "claim",
     "evidence_item",
-    "review_decision",
-    "exhibit_text"
+    "review_channel",
+    "exhibit_text",
+    "activity"
+  ],
+  "claim_kinds": {
+    "document_quote": "文献摘引（古籍原文）",
+    "artifact_dating": "藏品断代（出土/传世实物）",
+    "reconstruction": "复原方案（后世复原）",
+    "experiment": "实验记录（可行性/重复性实验）",
+    "scholar_opinion": "学者观点",
+    "translation": "翻译（今译/外译）",
+    "education_activity": "教育活动所引用结论（单独聚合）"
+  },
+  "evidence_tiers": {
+    "DOCUMENTARY": "史料记载",
+    "ARTIFACT": "实物证据",
+    "EXPERIMENTAL": "实验支持",
+    "DISPUTED": "仍存争议"
+  },
+  "review_decisions": [
+    "approved",
+    "changes_requested",
+    "rejected",
+    "revoked"
   ],
   "events": [
     "CLAIM_REGISTERED",
     "EVIDENCE_LINKED",
     "REVIEW_RECORDED",
+    "CLAIM_SUPERSEDED",
+    "CLAIM_WITHDRAWN",
+    "EXHIBIT_CREATED",
+    "EXHIBIT_REVISED",
     "TEXT_RELEASED",
-    "IMPACT_REOPENED"
+    "IMPACT_REOPENED",
+    "IMPACT_RESOLVED",
+    "TEXT_WITHDRAWN",
+    "ACTIVITY_REGISTERED"
   ],
   "envelope": {
     "required": [
@@ -22,6 +52,12 @@
       "version",
       "payload"
     ],
-    "version_minimum": 1
-  }
+    "version_minimum": 1,
+    "version_rule": "version 为该聚合自身的递增序号；追加时 expected_version 必须等于当前版本，否则返回 409 版本冲突。"
+  },
+  "rules": [
+    "业务事实只增不改，更正由 CLAIM_SUPERSEDED / CLAIM_WITHDRAWN 表达，撤销不删除审议过程。",
+    "冲突主张可并存；DISPUTED 不阻止并存呈现，但未经对应专业复核不得对外定论。",
+    "TEXT_RELEASED 携带完整证据快照；勘误只把依赖闭包真正受影响的在展展签 IMPACT_REOPENED。"
+  ]
 }

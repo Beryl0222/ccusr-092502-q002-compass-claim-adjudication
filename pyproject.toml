@@ -1,6 +1,6 @@
 [project]
 name = "compass-claim-adjudication"
 version = "0.1.0"
-description = "罗盘展陈主张裁决库的领域事件边界"
+description = "罗盘展陈主张裁决库：分级主张、专业复核门禁、勘误影响面与只增事件史"
 requires-python = ">=3.11"
 dependencies = []
